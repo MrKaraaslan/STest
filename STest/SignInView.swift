@@ -18,49 +18,47 @@ struct SignInView: View {
     var body: some View {
         VStack {
             VStack {
-                VStack {
-                    
-                    Image("logo").resizable().scaledToFit().padding(.bottom, 64)
-                    
-                    VStack(spacing: 16) {
-                        MyTextField(placeHolder: "Email", imageName: "envelope", value: $email)
-                        MySecureField(placeHolder: "Şifre", imageName: "lock", value: $password)
-                    }
-                    
-                    Button(action: {
-                         //: firebase and navigation
-                    }) {
-                        Text("Giriş yap")
-                    }
-                    .MyButton()
-                    .padding(.top, 32)
-                    
-                    Text("Şifremi Unuttum")
-                        .foregroundColor(.grayColor)
-                        .padding(.top, 32)
-                        .onTapGesture {
-                            withAnimation(){
-                                self.current = 3
-                            }
-                    }
-                    
-                    
-                }.frame(maxHeight: .infinity)
                 
-                VStack {
-                    Button(action: {
-                        //: navigate
+                Image("logo").resizable().scaledToFit().padding(.bottom, 64)
+                
+                VStack(spacing: 16) {
+                    MyTextField(placeHolder: "Email", imageName: "envelope", value: $email)
+                    MySecureField(placeHolder: "Şifre", imageName: "lock", value: $password)
+                }
+                
+                Button(action: {
+                     //: firebase and navigation
+                }) {
+                    Text("Giriş yap")
+                }
+                .myButton()
+                .padding(.top, 32)
+                
+                Text("Şifremi Unuttum")
+                    .foregroundColor(.grayColor)
+                    .padding(.top, 32)
+                    .onTapGesture {
                         withAnimation(){
-                            self.current = 2
+                            self.current = 3
                         }
-                    }) {
-                        Text("Kayıt Ol")
-                            .foregroundColor(.mainColor)
+                }
+                
+                
+            }.frame(maxHeight: .infinity)
+            
+            VStack {
+                Button(action: {
+                    //: navigate
+                    withAnimation(){
+                        self.current = 2
                     }
+                }) {
+                    Text("Kayıt Ol")
+                        .foregroundColor(.mainColor)
                 }
             }
-            .padding([.leading, .trailing],32)
         }
+        .padding([.leading, .trailing],32)
     }
 }
 
