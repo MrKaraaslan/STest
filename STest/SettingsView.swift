@@ -34,6 +34,7 @@ struct SettingsView: View {
                             Toggle(isOn: $isNotification) {
                                 Text("Bildirimler")
                             }
+                            Text("Şifremi değiştir")
                             Text("Reklamları kaldır")
                             Text("Uygulamayı paylaş")
                             Text("Hata Bildir")

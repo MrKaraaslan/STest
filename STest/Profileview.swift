@@ -17,11 +17,16 @@ struct Profileview: View {
     
     @State var showSettings = false
     
+    
+    @State var userName = "an example name"
+    @State var userMail = "example@example.com"
+    @State var userPhone = ""
+    
+    
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "gear")
-                    .myIcon()
+                MyImage(imageName: "gear")
                     .onTapGesture {
                         self.showSettings = true
                     }
@@ -29,9 +34,9 @@ struct Profileview: View {
                         SettingsView()
                     })
                 Spacer()
-                Image(systemName: "bell").myIcon()
+                MyImage(imageName: "bell")
             }
-            VStack {
+            VStack(spacing: 32) {
                 //user image
                 ZStack(alignment: .bottomTrailing) {
                     if(userImage != nil){
@@ -53,8 +58,7 @@ struct Profileview: View {
                     Button(action: {
                         self.showImageSheet = true
                     }) {
-                        Image(systemName: "person.crop.circle.badge.plus")
-                            .myIcon()
+                        MyImage(imageName: "person.crop.circle.badge.plus")
                             .background(Color.white)
                             .clipShape(Circle())
                             .actionSheet(isPresented: $showImageSheet){
@@ -91,7 +95,10 @@ struct Profileview: View {
                 }
                 // user image ends
                 
-                Text("name")
+                VStack(spacing: 16) {
+                    MyText(text: userName, imageName: "person.circle")
+                    MyText(text: userMail, imageName: "envelope")
+                }
                 
                 
             }.frame(maxHeight: .infinity, alignment: .top)

@@ -22,6 +22,7 @@ struct MySecureField: View {
             HStack(spacing: 0) {
                 SecureField("", text: $value)
                     .frame(height: 40)
+                    .padding(.leading, 8)
                 Image(systemName: imageName)
                     .frame(width: 40, height: 40)
                     .imageScale(.large)

@@ -19,10 +19,6 @@ extension View {
     func myButton() -> some View {
         self.modifier(ButtonModifier())
     }
-    
-    func myIcon() -> some View {
-        self.modifier(IconModifier())
-    }
 }
 
 
@@ -36,15 +32,5 @@ struct ButtonModifier: ViewModifier {
             .foregroundColor(.white)
             .background(Color.mainColor)
             .cornerRadius(25)
-    }
-}
-
-struct IconModifier: ViewModifier {
-    
-    func body(content: Content) -> some View {
-        content
-            .imageScale(.large)
-            .frame(width: 50, height: 50, alignment: .center)
-            .foregroundColor(.mainColor)
     }
 }

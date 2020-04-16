@@ -12,6 +12,8 @@
 		AA350A3E243C7D11008476CF /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA350A3D243C7D11008476CF /* ForgotPasswordView.swift */; };
 		AA350A40243C87E1008476CF /* RegisterMotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA350A3F243C87E1008476CF /* RegisterMotherView.swift */; };
 		AA66C37824435FBE008475B5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA66C37724435FBE008475B5 /* SettingsView.swift */; };
+		AA73D5A5244894AB00BA9041 /* MyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA73D5A4244894AB00BA9041 /* MyText.swift */; };
+		AA73D5A724489DCA00BA9041 /* MyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA73D5A624489DCA00BA9041 /* MyImage.swift */; };
 		AA843E3E243B8571001B57B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E3D243B8571001B57B8 /* AppDelegate.swift */; };
 		AA843E40243B8571001B57B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E3F243B8571001B57B8 /* SceneDelegate.swift */; };
 		AA843E42243B8571001B57B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E41243B8571001B57B8 /* ContentView.swift */; };
@@ -31,6 +33,8 @@
 		AA350A3D243C7D11008476CF /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		AA350A3F243C87E1008476CF /* RegisterMotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMotherView.swift; sourceTree = "<group>"; };
 		AA66C37724435FBE008475B5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AA73D5A4244894AB00BA9041 /* MyText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyText.swift; sourceTree = "<group>"; };
+		AA73D5A624489DCA00BA9041 /* MyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImage.swift; sourceTree = "<group>"; };
 		AA843E3A243B8571001B57B8 /* STest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA843E3D243B8571001B57B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA843E3F243B8571001B57B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 				AA843E53243B8652001B57B8 /* Extensions.swift */,
 				AA843E55243B9FEF001B57B8 /* MyTextField.swift */,
 				AA843E59243BA529001B57B8 /* MySecureField.swift */,
+				AA73D5A4244894AB00BA9041 /* MyText.swift */,
+				AA73D5A624489DCA00BA9041 /* MyImage.swift */,
 				AA843E43243B8571001B57B8 /* Assets.xcassets */,
 				AA843E48243B8571001B57B8 /* LaunchScreen.storyboard */,
 				AA843E4B243B8571001B57B8 /* Info.plist */,
@@ -176,12 +182,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA73D5A5244894AB00BA9041 /* MyText.swift in Sources */,
 				AA843E5A243BA529001B57B8 /* MySecureField.swift in Sources */,
 				AA843E54243B8652001B57B8 /* Extensions.swift in Sources */,
 				AA350A40243C87E1008476CF /* RegisterMotherView.swift in Sources */,
 				AA843E56243B9FEF001B57B8 /* MyTextField.swift in Sources */,
 				AA843E3E243B8571001B57B8 /* AppDelegate.swift in Sources */,
 				AA843E5C243BC8CA001B57B8 /* SignUpView.swift in Sources */,
+				AA73D5A724489DCA00BA9041 /* MyImage.swift in Sources */,
 				AA843E40243B8571001B57B8 /* SceneDelegate.swift in Sources */,
 				AA32E08C243E057000CBBFF4 /* Profileview.swift in Sources */,
 				AA843E42243B8571001B57B8 /* ContentView.swift in Sources */,
