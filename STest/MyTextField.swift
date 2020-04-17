@@ -28,6 +28,7 @@ struct MyTextField: View {
                     .imageScale(.large)
                     .font(.system(size: 20))
                     .foregroundColor(.mainColor)
+                    .padding(.trailing, 8)
             }
             Rectangle()
                 .frame(height: 1)

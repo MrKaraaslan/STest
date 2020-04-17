@@ -53,7 +53,7 @@ struct SettingsView: View {
                         
                     }
                     
-                    Text("Hello, World!")
+                    Text("Sürüm: 1.0")
                 }.navigationBarTitle(Text("Ayarlar"), displayMode: .inline)
             }
         }
