@@ -9,8 +9,36 @@
 import SwiftUI
 
 struct CreateProjectView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+            VStack {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text("Projelerim")
+                    }.padding(.leading)
+                }
+            }.frame(maxWidth: .infinity, alignment: .leading)
+            
+            VStack {
+                Button(action: {
+                    
+                }) {
+                    Text("Proje Oluştur")
+                }.myButton()
+            }
+            .frame(maxHeight: .infinity)
+            .padding([.leading, .trailing])
+            
+            
+        }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 

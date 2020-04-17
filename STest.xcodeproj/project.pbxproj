@@ -26,6 +26,7 @@
 		AA843E56243B9FEF001B57B8 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E55243B9FEF001B57B8 /* MyTextField.swift */; };
 		AA843E5A243BA529001B57B8 /* MySecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E59243BA529001B57B8 /* MySecureField.swift */; };
 		AA843E5C243BC8CA001B57B8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E5B243BC8CA001B57B8 /* SignUpView.swift */; };
+		AAE32906244A27A900A474F3 /* CreateProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE32905244A27A900A474F3 /* CreateProjectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		AA843E55243B9FEF001B57B8 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		AA843E59243BA529001B57B8 /* MySecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySecureField.swift; sourceTree = "<group>"; };
 		AA843E5B243BC8CA001B57B8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		AAE32905244A27A900A474F3 /* CreateProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,12 +94,13 @@
 				AA32E08B243E057000CBBFF4 /* Profileview.swift */,
 				AA66C37724435FBE008475B5 /* SettingsView.swift */,
 				AA7B6B022449EB0000CD5527 /* ProjectsView.swift */,
+				AAE32905244A27A900A474F3 /* CreateProjectView.swift */,
 				AA32E08D243E079800CBBFF4 /* ImagePicker.swift */,
-				AA843E53243B8652001B57B8 /* Extensions.swift */,
 				AA843E55243B9FEF001B57B8 /* MyTextField.swift */,
 				AA843E59243BA529001B57B8 /* MySecureField.swift */,
 				AA73D5A4244894AB00BA9041 /* MyText.swift */,
 				AA73D5A624489DCA00BA9041 /* MyImage.swift */,
+				AA843E53243B8652001B57B8 /* Extensions.swift */,
 				AA843E43243B8571001B57B8 /* Assets.xcassets */,
 				AA843E48243B8571001B57B8 /* LaunchScreen.storyboard */,
 				AA843E4B243B8571001B57B8 /* Info.plist */,
@@ -195,6 +198,7 @@
 				AA843E5C243BC8CA001B57B8 /* SignUpView.swift in Sources */,
 				AA73D5A724489DCA00BA9041 /* MyImage.swift in Sources */,
 				AA843E40243B8571001B57B8 /* SceneDelegate.swift in Sources */,
+				AAE32906244A27A900A474F3 /* CreateProjectView.swift in Sources */,
 				AA32E08C243E057000CBBFF4 /* Profileview.swift in Sources */,
 				AA843E42243B8571001B57B8 /* ContentView.swift in Sources */,
 				AA32E08E243E079800CBBFF4 /* ImagePicker.swift in Sources */,

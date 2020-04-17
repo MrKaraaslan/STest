@@ -20,7 +20,7 @@ struct Profileview: View {
     
     @State var userName = "an example name"
     @State var userMail = "example@example.com"
-    @State var userPhone = ""
+    //@State var userPhone = "" //: so i need this?
     
     
     var body: some View {
@@ -104,7 +104,7 @@ struct Profileview: View {
                                 Text("Projelerim").foregroundColor(.mainColor)
                                 MyImage(imageName: "arrowshape.turn.up.right")
                             }
-                            .padding()
+                            .frame(maxWidth: .infinity)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20)
                                     .stroke(Color.mainColor)
