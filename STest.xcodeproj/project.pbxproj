@@ -14,6 +14,7 @@
 		AA66C37824435FBE008475B5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA66C37724435FBE008475B5 /* SettingsView.swift */; };
 		AA73D5A5244894AB00BA9041 /* MyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA73D5A4244894AB00BA9041 /* MyText.swift */; };
 		AA73D5A724489DCA00BA9041 /* MyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA73D5A624489DCA00BA9041 /* MyImage.swift */; };
+		AA74CC76244B7D0700F6E100 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA74CC75244B7D0700F6E100 /* TeamDetailView.swift */; };
 		AA7B6B032449EB0000CD5527 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B6B022449EB0000CD5527 /* ProjectsView.swift */; };
 		AA843E3E243B8571001B57B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E3D243B8571001B57B8 /* AppDelegate.swift */; };
 		AA843E40243B8571001B57B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E3F243B8571001B57B8 /* SceneDelegate.swift */; };
@@ -27,6 +28,9 @@
 		AA843E5A243BA529001B57B8 /* MySecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E59243BA529001B57B8 /* MySecureField.swift */; };
 		AA843E5C243BC8CA001B57B8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E5B243BC8CA001B57B8 /* SignUpView.swift */; };
 		AAE32906244A27A900A474F3 /* CreateProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE32905244A27A900A474F3 /* CreateProjectView.swift */; };
+		AAF8CEA3244B1E0B00F19B20 /* TeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF8CEA2244B1E0B00F19B20 /* TeamsView.swift */; };
+		AAF8CEA5244B415900F19B20 /* CreateTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF8CEA4244B415900F19B20 /* CreateTeamView.swift */; };
+		AAF8CEA7244B427100F19B20 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF8CEA6244B427100F19B20 /* Team.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,7 @@
 		AA66C37724435FBE008475B5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AA73D5A4244894AB00BA9041 /* MyText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyText.swift; sourceTree = "<group>"; };
 		AA73D5A624489DCA00BA9041 /* MyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImage.swift; sourceTree = "<group>"; };
+		AA74CC75244B7D0700F6E100 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
 		AA7B6B022449EB0000CD5527 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		AA843E3A243B8571001B57B8 /* STest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA843E3D243B8571001B57B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +57,9 @@
 		AA843E59243BA529001B57B8 /* MySecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySecureField.swift; sourceTree = "<group>"; };
 		AA843E5B243BC8CA001B57B8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		AAE32905244A27A900A474F3 /* CreateProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectView.swift; sourceTree = "<group>"; };
+		AAF8CEA2244B1E0B00F19B20 /* TeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.swift; sourceTree = "<group>"; };
+		AAF8CEA4244B415900F19B20 /* CreateTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamView.swift; sourceTree = "<group>"; };
+		AAF8CEA6244B427100F19B20 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +101,10 @@
 				AA350A3D243C7D11008476CF /* ForgotPasswordView.swift */,
 				AA32E08B243E057000CBBFF4 /* Profileview.swift */,
 				AA66C37724435FBE008475B5 /* SettingsView.swift */,
+				AAF8CEA2244B1E0B00F19B20 /* TeamsView.swift */,
+				AA74CC75244B7D0700F6E100 /* TeamDetailView.swift */,
+				AAF8CEA6244B427100F19B20 /* Team.swift */,
+				AAF8CEA4244B415900F19B20 /* CreateTeamView.swift */,
 				AA7B6B022449EB0000CD5527 /* ProjectsView.swift */,
 				AAE32905244A27A900A474F3 /* CreateProjectView.swift */,
 				AA32E08D243E079800CBBFF4 /* ImagePicker.swift */,
@@ -189,14 +201,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA73D5A5244894AB00BA9041 /* MyText.swift in Sources */,
+				AAF8CEA5244B415900F19B20 /* CreateTeamView.swift in Sources */,
 				AA843E5A243BA529001B57B8 /* MySecureField.swift in Sources */,
 				AA7B6B032449EB0000CD5527 /* ProjectsView.swift in Sources */,
 				AA843E54243B8652001B57B8 /* Extensions.swift in Sources */,
 				AA350A40243C87E1008476CF /* RegisterMotherView.swift in Sources */,
+				AA74CC76244B7D0700F6E100 /* TeamDetailView.swift in Sources */,
 				AA843E56243B9FEF001B57B8 /* MyTextField.swift in Sources */,
 				AA843E3E243B8571001B57B8 /* AppDelegate.swift in Sources */,
+				AAF8CEA7244B427100F19B20 /* Team.swift in Sources */,
 				AA843E5C243BC8CA001B57B8 /* SignUpView.swift in Sources */,
 				AA73D5A724489DCA00BA9041 /* MyImage.swift in Sources */,
+				AAF8CEA3244B1E0B00F19B20 /* TeamsView.swift in Sources */,
 				AA843E40243B8571001B57B8 /* SceneDelegate.swift in Sources */,
 				AAE32906244A27A900A474F3 /* CreateProjectView.swift in Sources */,
 				AA32E08C243E057000CBBFF4 /* Profileview.swift in Sources */,

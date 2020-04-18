@@ -17,7 +17,6 @@ struct Profileview: View {
     
     @State var showSettings = false
     
-    
     @State var userName = "an example name"
     @State var userMail = "example@example.com"
     //@State var userPhone = "" //: so i need this?
@@ -99,6 +98,17 @@ struct Profileview: View {
                     VStack(spacing: 16) {
                         MyText(text: userName, imageName: "person.circle")
                         MyText(text: userMail, imageName: "envelope")
+                        NavigationLink(destination: TeamsView()) {
+                            HStack {
+                                Text("Takımlarım").foregroundColor(.mainColor)
+                                MyImage(imageName: "arrowshape.turn.up.right")
+                            }
+                            .frame(maxWidth: .infinity)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.mainColor)
+                            )
+                        }
                         NavigationLink(destination: ProjectsView()) {
                             HStack {
                                 Text("Projelerim").foregroundColor(.mainColor)
@@ -109,16 +119,17 @@ struct Profileview: View {
                                 RoundedRectangle(cornerRadius: 20)
                                     .stroke(Color.mainColor)
                             )
-                            
                         }
                         
+                        
+                        
+                        
+                        
                     }
-                    
-                    
                 }.frame(maxHeight: .infinity, alignment: .top)
                 
             }
-            .padding([.leading, .trailing], 16)
+            .padding([.leading, .trailing])
             .navigationBarTitle("")
             .navigationBarHidden(true)
         }

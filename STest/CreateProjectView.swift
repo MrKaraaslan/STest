@@ -9,7 +9,10 @@
 import SwiftUI
 
 struct CreateProjectView: View {
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @State var projectName = ""
     
     var body: some View {
         VStack {
@@ -26,14 +29,25 @@ struct CreateProjectView: View {
             }.frame(maxWidth: .infinity, alignment: .leading)
             
             VStack {
+                
+                Form {
+                    Section {
+                        MyTextField(placeHolder: "Proje Adı", imageName: "", value: $projectName)
+                    }
+                }
+                
+                
+                
                 Button(action: {
                     
                 }) {
                     Text("Proje Oluştur")
-                }.myButton()
+                }
+                .myButton()
+                .padding([.leading, .trailing])
             }
-            .frame(maxHeight: .infinity)
-            .padding([.leading, .trailing])
+            //.frame(maxHeight: .infinity) not needed if form is used
+            
             
             
         }
