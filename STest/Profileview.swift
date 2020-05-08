@@ -96,8 +96,8 @@ struct Profileview: View {
                     // user image ends
                     
                     VStack(spacing: 16) {
-                        MyText(text: userName, imageName: "person.circle")
-                        MyText(text: userMail, imageName: "envelope")
+                        MyText(header: Text("Kullanıcı Adı"), text: userName, imageName: "person.circle")
+                        MyText(header: Text("Email"), text: userMail, imageName: "envelope")
                         NavigationLink(destination: TeamsView()) {
                             HStack {
                                 Text("Takımlarım").foregroundColor(.mainColor)

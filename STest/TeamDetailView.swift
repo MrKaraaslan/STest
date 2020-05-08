@@ -10,26 +10,72 @@ import SwiftUI
 
 struct TeamDetailView: View {
     
-    @Binding var teamImage: Image
-    @Binding var teamName: String
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @State var team: Team
+    var isCreator: Bool
     
     var body: some View {
         VStack {
-            teamImage
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: .infinity)
-                //.frame(width: 150, height: 150)
-                //.clipShape(Circle())
+            VStack {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text("Takımlarım")
+                    }.padding(.leading)
+                }
+            }.frame(maxWidth: .infinity, alignment: .leading)
             
-            
+            VStack {
+                team.teamImage
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxWidth: .infinity)
+                    .frame(width: 150, height: 150)
+                    .clipShape(Circle())
+                
+                MyText(header: Text("Takım adı"), text: team.teamName, imageName: "")
+                if !isCreator {
+                    MyText(header: Text("Takım lideri"), text: team.creator, imageName: "")
+                }
+                Bar(progress: team.teamFullness)
+                    
+                
+                
+            }
+            .padding([.leading, .trailing])
+            .frame(maxHeight: .infinity, alignment: .top)
         }
-        .frame(maxHeight: .infinity, alignment: .top)
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 
 struct TeamDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamDetailView(teamImage: .constant(Image("img1")), teamName: .constant("team name"))
+        TeamDetailView(team: created[0], isCreator: false)
+    }
+}
+
+struct Bar: View {
+    
+    var progress: Double
+    
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                Rectangle()
+                    .opacity(0.3)
+                    .foregroundColor(.mainColor)
+                
+                Rectangle()
+                    .foregroundColor(.mainColor)
+                    .frame(width: geometry.size.width*CGFloat(self.progress))
+            }
+            .cornerRadius(20)
+        }.frame(height: 40)
+        
     }
 }
