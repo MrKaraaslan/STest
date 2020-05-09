@@ -38,15 +38,7 @@ struct ProjectsView: View {
             
             VStack {
                 NavigationLink(destination: CreateProjectView()) {
-                    HStack {
-                        Text("Proje Oluştur").foregroundColor(.mainColor)
-                        MyImage(imageName: "arrowshape.turn.up.right")
-                    }
-                    .frame(maxWidth: .infinity)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.mainColor)
-                    )
+                    MyNavigationButton(text: Text("Proje Oluştur"))
                 }
             }.padding([.leading, .trailing])
         }

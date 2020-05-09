@@ -51,15 +51,7 @@ struct TeamsView: View {
             
             VStack {
                 NavigationLink(destination: CreateTeamView()) {
-                    HStack {
-                        Text("Takım Oluştur").foregroundColor(.mainColor)
-                        MyImage(imageName: "arrowshape.turn.up.right")
-                    }
-                    .frame(maxWidth: .infinity)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.mainColor)
-                    )
+                    MyNavigationButton(text: Text("Takım Oluştur"))
                 }
             }.padding([.leading, .trailing])
         }

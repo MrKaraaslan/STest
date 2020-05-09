@@ -99,26 +99,10 @@ struct Profileview: View {
                         MyText(header: Text("Kullanıcı Adı"), text: userName, imageName: "person.circle")
                         MyText(header: Text("Email"), text: userMail, imageName: "envelope")
                         NavigationLink(destination: TeamsView()) {
-                            HStack {
-                                Text("Takımlarım").foregroundColor(.mainColor)
-                                MyImage(imageName: "arrowshape.turn.up.right")
-                            }
-                            .frame(maxWidth: .infinity)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.mainColor)
-                            )
+                            MyNavigationButton(text: Text("Takımlarım"))
                         }
                         NavigationLink(destination: ProjectsView()) {
-                            HStack {
-                                Text("Projelerim").foregroundColor(.mainColor)
-                                MyImage(imageName: "arrowshape.turn.up.right")
-                            }
-                            .frame(maxWidth: .infinity)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.mainColor)
-                            )
+                            MyNavigationButton(text: Text("Projelerim"))
                         }
                         
                         

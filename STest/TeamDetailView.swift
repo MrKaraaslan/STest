@@ -37,11 +37,13 @@ struct TeamDetailView: View {
                     .clipShape(Circle())
                 
                 MyText(header: Text("Takım adı"), text: team.teamName, imageName: "")
+                
                 if !isCreator {
                     MyText(header: Text("Takım lideri"), text: team.creator, imageName: "")
                 }
-                Bar(progress: team.teamFullness)
-                    
+                Bar(members: team.teamMembers, capacity: team.teamCapacitiy, progress: team.teamFullness)
+                
+                
                 
                 
             }
@@ -55,12 +57,14 @@ struct TeamDetailView: View {
 
 struct TeamDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamDetailView(team: created[0], isCreator: false)
+        TeamDetailView(team: created[3], isCreator: false)
     }
 }
 
 struct Bar: View {
     
+    var members: Int
+    var capacity: Int
     var progress: Double
     
     var body: some View {
@@ -73,9 +77,11 @@ struct Bar: View {
                 Rectangle()
                     .foregroundColor(.mainColor)
                     .frame(width: geometry.size.width*CGFloat(self.progress))
-            }
-            .cornerRadius(20)
+                
+                Text("\(self.members) / \(self.capacity)")
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .foregroundColor(.white)
+            }.cornerRadius(20)
         }.frame(height: 40)
-        
     }
 }
