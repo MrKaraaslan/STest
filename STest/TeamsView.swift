@@ -34,18 +34,29 @@ struct TeamsView: View {
             
             Form {
                 Section(header: Text("Oluşturduğum Takımlar")) {
-                    ForEach(teams.createdList, id: \.id) { team in
-                        NavigationLink(destination: TeamDetailView(team: team, isCreator: true)) {
-                            CreatedTeams(team: team)
+                    if teams.createdList.isEmpty {
+                        Text("Henüz bir takım oluşturmadınız!")
+                    }
+                    else {
+                        ForEach(teams.createdList, id: \.id) { team in
+                            NavigationLink(destination: TeamDetailView(team: team, isCreator: true)) {
+                                CreatedTeams(team: team)
+                            }
                         }
                     }
                 }
                 Section(header: Text("Katıldığım Takımlar")) {
-                    ForEach(teams.memberList, id: \.id) { team in
-                        NavigationLink(destination: TeamDetailView(team: team, isCreator: false)) {
-                            MemberTeams(team: team)
+                    if teams.createdList.isEmpty {
+                        Text("Henüz bir takıma katılmadınız!")
+                    }
+                    else {
+                        ForEach(teams.memberList, id: \.id) { team in
+                            NavigationLink(destination: TeamDetailView(team: team, isCreator: false)) {
+                                MemberTeams(team: team)
+                            }
                         }
                     }
+                    
                 }
             }
             
@@ -58,7 +69,11 @@ struct TeamsView: View {
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .onAppear(perform: {
-            self.teams.lister()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { // Change `2.0` to the desired number of seconds.
+               // Code you want to be delayed
+                self.teams.getTeams()
+            }
+            
         })
     }
 }
