@@ -85,7 +85,7 @@ struct TeamDetailView: View {
                 
                 
 
-            }.padding([.leading, .trailing])
+            }.padding([.leading, .trailing, .bottom])
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)

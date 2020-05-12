@@ -12,6 +12,8 @@ struct ProjectsView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
+    @EnvironmentObject var teamList: TeamClass
+    
     var body: some View {
         VStack {
             
@@ -40,7 +42,7 @@ struct ProjectsView: View {
                 NavigationLink(destination: CreateProjectView()) {
                     MyNavigationButton(text: Text("Proje Oluştur"))
                 }
-            }.padding([.leading, .trailing])
+            }.padding([.leading, .trailing, .bottom])
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
@@ -49,6 +51,6 @@ struct ProjectsView: View {
 
 struct ProjectsView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectsView()
+        ProjectsView().environmentObject(TeamClass())
     }
 }

@@ -11,7 +11,7 @@
 		AA32E08E243E079800CBBFF4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32E08D243E079800CBBFF4 /* ImagePicker.swift */; };
 		AA350A3E243C7D11008476CF /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA350A3D243C7D11008476CF /* ForgotPasswordView.swift */; };
 		AA350A40243C87E1008476CF /* RegisterMotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA350A3F243C87E1008476CF /* RegisterMotherView.swift */; };
-		AA555D29246AD80200A32F64 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA555D28246AD80200A32F64 /* TabView.swift */; };
+		AA555D29246AD80200A32F64 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA555D28246AD80200A32F64 /* AppTabView.swift */; };
 		AA66C37824435FBE008475B5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA66C37724435FBE008475B5 /* SettingsView.swift */; };
 		AA73D5A5244894AB00BA9041 /* MyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA73D5A4244894AB00BA9041 /* MyText.swift */; };
 		AA73D5A724489DCA00BA9041 /* MyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA73D5A624489DCA00BA9041 /* MyImage.swift */; };
@@ -40,7 +40,7 @@
 		AA32E08D243E079800CBBFF4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AA350A3D243C7D11008476CF /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		AA350A3F243C87E1008476CF /* RegisterMotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMotherView.swift; sourceTree = "<group>"; };
-		AA555D28246AD80200A32F64 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		AA555D28246AD80200A32F64 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		AA66C37724435FBE008475B5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AA73D5A4244894AB00BA9041 /* MyText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyText.swift; sourceTree = "<group>"; };
 		AA73D5A624489DCA00BA9041 /* MyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImage.swift; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 				AA843E51243B85EB001B57B8 /* SignInView.swift */,
 				AA843E5B243BC8CA001B57B8 /* SignUpView.swift */,
 				AA350A3D243C7D11008476CF /* ForgotPasswordView.swift */,
+				AA555D28246AD80200A32F64 /* AppTabView.swift */,
 				AA32E08B243E057000CBBFF4 /* ProfileView.swift */,
-				AA555D28246AD80200A32F64 /* TabView.swift */,
 				AA66C37724435FBE008475B5 /* SettingsView.swift */,
 				AAF8CEA2244B1E0B00F19B20 /* TeamsView.swift */,
 				AA74CC75244B7D0700F6E100 /* TeamDetailView.swift */,
@@ -211,7 +211,7 @@
 				AA843E5A243BA529001B57B8 /* MySecureField.swift in Sources */,
 				AA7B6B032449EB0000CD5527 /* ProjectsView.swift in Sources */,
 				AA843E54243B8652001B57B8 /* Extensions.swift in Sources */,
-				AA555D29246AD80200A32F64 /* TabView.swift in Sources */,
+				AA555D29246AD80200A32F64 /* AppTabView.swift in Sources */,
 				AA350A40243C87E1008476CF /* RegisterMotherView.swift in Sources */,
 				AA74CC76244B7D0700F6E100 /* TeamDetailView.swift in Sources */,
 				AA843E56243B9FEF001B57B8 /* MyTextField.swift in Sources */,

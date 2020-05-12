@@ -12,7 +12,7 @@ struct TeamsView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    @ObservedObject var teams = TeamClass()
+    @EnvironmentObject var teamList: TeamClass
     
     var body: some View {
         VStack {
@@ -34,11 +34,11 @@ struct TeamsView: View {
             
             Form {
                 Section(header: Text("Oluşturduğum Takımlar")) {
-                    if teams.createdList.isEmpty {
+                    if teamList.createdList.isEmpty {
                         Text("Henüz bir takım oluşturmadınız!")
                     }
                     else {
-                        ForEach(teams.createdList, id: \.id) { team in
+                        ForEach(teamList.createdList, id: \.id) { team in
                             NavigationLink(destination: TeamDetailView(team: team, isCreator: true)) {
                                 CreatedTeams(team: team)
                             }
@@ -46,11 +46,11 @@ struct TeamsView: View {
                     }
                 }
                 Section(header: Text("Katıldığım Takımlar")) {
-                    if teams.memberList.isEmpty {
+                    if teamList.memberList.isEmpty {
                         Text("Henüz bir takıma katılmadınız!")
                     }
                     else {
-                        ForEach(teams.memberList, id: \.id) { team in
+                        ForEach(teamList.memberList, id: \.id) { team in
                             NavigationLink(destination: TeamDetailView(team: team, isCreator: false)) {
                                 MemberTeams(team: team)
                             }
@@ -64,23 +64,16 @@ struct TeamsView: View {
                 NavigationLink(destination: CreateTeamView()) {
                     MyNavigationButton(text: Text("Takım Oluştur"))
                 }
-            }.padding([.leading, .trailing])
+            }.padding([.leading, .trailing, .bottom])
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
-        .onAppear(perform: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { // Change `2.0` to the desired number of seconds.
-               // Code you want to be delayed
-                self.teams.getTeams()
-            }
-            
-        })
     }
 }
 
 struct TeamsView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamsView()
+        TeamsView().environmentObject(TeamClass())
     }
 }
 

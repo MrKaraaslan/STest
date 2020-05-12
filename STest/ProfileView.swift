@@ -21,6 +21,7 @@ struct ProfileView: View {
     @State var userMail = "example@example.com"
     //@State var userPhone = "" //: so i need this?
     
+    @EnvironmentObject var teamList: TeamClass
     
     var body: some View {
         NavigationView {
@@ -116,6 +117,13 @@ struct ProfileView: View {
             .padding([.leading, .trailing])
             .navigationBarTitle("")
             .navigationBarHidden(true)
+            .onAppear(perform: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { // Change `2.0` to the desired number of seconds.
+                   // Code you want to be delayed
+                    self.teamList.getTeams()
+                }
+                
+            })
         }
     }
     
@@ -126,6 +134,6 @@ struct ProfileView: View {
 
 struct Profileview_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView().environmentObject(TeamClass())
     }
 }

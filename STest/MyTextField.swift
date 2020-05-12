@@ -23,12 +23,14 @@ struct MyTextField: View {
                 TextField("", text: $value)
                     .frame(height: 40)
                     .padding(.leading, 8)
-                Image(systemName: imageName)
-                    .frame(width: 40, height: 40)
-                    .imageScale(.large)
-                    .font(.system(size: 20))
-                    .foregroundColor(.mainColor)
-                    .padding(.trailing, 8)
+                if imageName != "" {
+                    Image(systemName: imageName)
+                        .frame(width: 40, height: 40)
+                        .imageScale(.large)
+                        .font(.system(size: 20))
+                        .foregroundColor(.mainColor)
+                        .padding(.trailing, 8)
+                }
             }
             Rectangle()
                 .frame(height: 1)

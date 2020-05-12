@@ -13,6 +13,9 @@ struct CreateProjectView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @State var projectName = ""
+    @State var team = ""
+    
+    @EnvironmentObject var teamList: TeamClass
     
     var body: some View {
         VStack {
@@ -34,6 +37,18 @@ struct CreateProjectView: View {
                     Section {
                         MyTextField(placeHolder: "Proje Adı", imageName: "", value: $projectName)
                     }
+                    /*
+                    Section {
+                        Picker(selection: $team, label: Text("Takım")){
+                            //Text("Kişisel")
+                            ForEach(teamList.createdList){
+                                Text($0.teamName)
+                            }
+                            
+                        }
+                        .navigationBarTitle("")
+                        .navigationBarHidden(true)
+                    }*/
                 }
                 
                 
@@ -44,7 +59,7 @@ struct CreateProjectView: View {
                     Text("Proje Oluştur")
                 }
                 .myButton()
-                .padding([.leading, .trailing])
+                .padding([.leading, .trailing, .bottom])
             }
             //.frame(maxHeight: .infinity) not needed if form is used
             
@@ -58,6 +73,6 @@ struct CreateProjectView: View {
 
 struct CreateProjectView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateProjectView()
+        CreateProjectView().environmentObject(TeamClass())
     }
 }

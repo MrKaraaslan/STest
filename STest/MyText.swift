@@ -26,11 +26,13 @@ struct MyText: View {
                 Text(text)
                     .frame(height: 30)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Image(systemName: imageName)
+                if imageName != ""{
+                    Image(systemName: imageName)
                     .frame(width: 30, height: 30)
                     .imageScale(.large)
                     .font(.system(size: 20))
                     .foregroundColor(.mainColor)
+                }
             }.padding([.leading, .trailing], 8)
             Rectangle()
                 .frame(height: 1)
