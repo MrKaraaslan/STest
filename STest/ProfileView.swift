@@ -1,5 +1,5 @@
 //
-//  Profileview.swift
+//  ProfileView.swift
 //  STest
 //
 //  Created by Mehmet Karaaslan on 8.04.2020.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Profileview: View {
+struct ProfileView: View {
     
     @State var userImage: Image? = nil
     @State var showImageSheet = false
@@ -126,6 +126,6 @@ struct Profileview: View {
 
 struct Profileview_Previews: PreviewProvider {
     static var previews: some View {
-        Profileview()
+        ProfileView()
     }
 }

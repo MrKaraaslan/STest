@@ -46,7 +46,7 @@ struct TeamsView: View {
                     }
                 }
                 Section(header: Text("Katıldığım Takımlar")) {
-                    if teams.createdList.isEmpty {
+                    if teams.memberList.isEmpty {
                         Text("Henüz bir takıma katılmadınız!")
                     }
                     else {
