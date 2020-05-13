@@ -11,11 +11,13 @@ import SwiftUI
 struct CreateProjectView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var teamList: TeamClass
     
     @State var projectName = ""
+    @State var isTeam = false
     @State var team = ""
     
-    @EnvironmentObject var teamList: TeamClass
+    
     
     var body: some View {
         VStack {
@@ -37,18 +39,32 @@ struct CreateProjectView: View {
                     Section {
                         MyTextField(placeHolder: "Proje Adı", imageName: "", value: $projectName)
                     }
-                    /*
+                    
                     Section {
-                        Picker(selection: $team, label: Text("Takım")){
-                            //Text("Kişisel")
-                            ForEach(teamList.createdList){
-                                Text($0.teamName)
-                            }
-                            
+                        Toggle(isOn: $isTeam) {
+                            Text("Takım")
                         }
-                        .navigationBarTitle("")
-                        .navigationBarHidden(true)
-                    }*/
+                        
+                        if isTeam {
+                            Picker("", selection: $team){
+                                ForEach(teamList.createdList) { team in
+                                    HStack {
+                                        team.teamImage
+                                            .renderingMode(Image.TemplateRenderingMode.original)
+                                            .resizable()
+                                            .frame(width: 55, height: 55)
+                                            .clipShape(Circle())
+                                        
+                                        Text(team.teamName)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                    }
+                                    .tag(team.teamName)
+                                }
+                            }
+                            .navigationBarTitle("")
+                            .navigationBarHidden(true)
+                        }
+                    }
                 }
                 
                 
@@ -71,6 +87,20 @@ struct CreateProjectView: View {
     }
 }
 
+/*
+ ZStack {
+     ProgressBar(progress: team.teamFullness)
+         .frame(width: 60, height: 60)
+     
+     team.teamImage
+         .resizable()
+         .frame(width: 55, height: 55)
+         .clipShape(Circle())
+ }
+ Text(team.teamName)
+ 
+ 
+ */
 struct CreateProjectView_Previews: PreviewProvider {
     static var previews: some View {
         CreateProjectView().environmentObject(TeamClass())
