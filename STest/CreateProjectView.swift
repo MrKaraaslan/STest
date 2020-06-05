@@ -46,23 +46,28 @@ struct CreateProjectView: View {
                         }
                         
                         if isTeam {
-                            Picker("", selection: $team){
-                                ForEach(teamList.createdList) { team in
-                                    HStack {
-                                        team.teamImage
-                                            .renderingMode(Image.TemplateRenderingMode.original)
-                                            .resizable()
-                                            .frame(width: 55, height: 55)
-                                            .clipShape(Circle())
-                                        
-                                        Text(team.teamName)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                    }
-                                    .tag(team.teamName)
-                                }
+                            if teamList.createdList.isEmpty {
+                                Text("Henüz Takım Oluşturmadınız")
                             }
-                            .navigationBarTitle("")
-                            .navigationBarHidden(true)
+                            else {
+                                Picker(selection: $team, label: team == "" ? Text("Takım Seçiniz"): nil) {
+                                    ForEach(teamList.createdList) { team in
+                                        HStack {
+                                            team.teamImage
+                                                .renderingMode(Image.TemplateRenderingMode.original)
+                                                .resizable()
+                                                .frame(width: 55, height: 55)
+                                                .clipShape(Circle())
+                                            
+                                            Text(team.teamName)
+                                                .frame(maxWidth: .infinity, alignment: .leading)
+                                        }
+                                        .tag(team.teamName)
+                                    }
+                                }
+                                .navigationBarTitle("")
+                                .navigationBarHidden(true)
+                            }
                         }
                     }
                 }

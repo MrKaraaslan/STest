@@ -10,6 +10,31 @@ import SwiftUI
 
 class TeamClass: ObservableObject {
     
+    @Published var isOk: Bool = false
+    @Published var newName: String = "" {
+        didSet {
+            print("check")
+            if !self.createdList.isEmpty {
+                for team in self.createdList {
+                    print("for")
+                    if team.teamName == self.newName {
+                        print("f")
+                        isOk  = false
+                        break;
+                    }
+                    else {
+                        print("t")
+                        isOk = true
+                    }
+                }
+            }
+            else {
+                isOk = true
+            }
+        }
+    }
+    
+    
     @Published var allTeams: [Team] = []
     @Published var createdList: [Team] = []
     @Published var memberList: [Team] = []
