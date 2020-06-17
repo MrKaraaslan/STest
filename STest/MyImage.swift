@@ -11,11 +11,12 @@ import SwiftUI
 struct MyImage: View {
     
     var imageName: String
+    var imageColor: Color = .mainColor
     
     var body: some View {
         Image(systemName: imageName)
             .imageScale(.large)
             .frame(width: 40, height: 40, alignment: .center)
-            .foregroundColor(.mainColor)
+            .foregroundColor(imageColor)
     }
 }

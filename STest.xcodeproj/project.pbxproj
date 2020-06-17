@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AA32E08C243E057000CBBFF4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32E08B243E057000CBBFF4 /* ProfileView.swift */; };
 		AA32E08E243E079800CBBFF4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32E08D243E079800CBBFF4 /* ImagePicker.swift */; };
+		AA33ED302499739C00857341 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33ED2F2499739C00857341 /* Project.swift */; };
+		AA33ED322499756C00857341 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33ED312499756C00857341 /* Person.swift */; };
 		AA350A3E243C7D11008476CF /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA350A3D243C7D11008476CF /* ForgotPasswordView.swift */; };
 		AA350A40243C87E1008476CF /* RegisterMotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA350A3F243C87E1008476CF /* RegisterMotherView.swift */; };
 		AA555D29246AD80200A32F64 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA555D28246AD80200A32F64 /* AppTabView.swift */; };
@@ -38,6 +40,8 @@
 /* Begin PBXFileReference section */
 		AA32E08B243E057000CBBFF4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AA32E08D243E079800CBBFF4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		AA33ED2F2499739C00857341 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		AA33ED312499756C00857341 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		AA350A3D243C7D11008476CF /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		AA350A3F243C87E1008476CF /* RegisterMotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMotherView.swift; sourceTree = "<group>"; };
 		AA555D28246AD80200A32F64 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
@@ -112,7 +116,9 @@
 				AAF8CEA6244B427100F19B20 /* Team.swift */,
 				AA7B6B022449EB0000CD5527 /* ProjectsView.swift */,
 				AAE32905244A27A900A474F3 /* CreateProjectView.swift */,
+				AA33ED2F2499739C00857341 /* Project.swift */,
 				AA32E08D243E079800CBBFF4 /* ImagePicker.swift */,
+				AA33ED312499756C00857341 /* Person.swift */,
 				AA75CD802466E8CF00010989 /* MyNavigationButton.swift */,
 				AA843E55243B9FEF001B57B8 /* MyTextField.swift */,
 				AA843E59243BA529001B57B8 /* MySecureField.swift */,
@@ -206,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA33ED322499756C00857341 /* Person.swift in Sources */,
 				AA73D5A5244894AB00BA9041 /* MyText.swift in Sources */,
 				AAF8CEA5244B415900F19B20 /* CreateTeamView.swift in Sources */,
 				AA843E5A243BA529001B57B8 /* MySecureField.swift in Sources */,
@@ -229,6 +236,7 @@
 				AA350A3E243C7D11008476CF /* ForgotPasswordView.swift in Sources */,
 				AA843E52243B85EB001B57B8 /* SignInView.swift in Sources */,
 				AA66C37824435FBE008475B5 /* SettingsView.swift in Sources */,
+				AA33ED302499739C00857341 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

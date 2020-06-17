@@ -24,9 +24,7 @@ struct SettingsView: View {
                         Section {
                             HStack {
                                 Text("Çıkış yap")
-                                Image(systemName: "power")
-                                    .imageScale(.large)
-                                    .foregroundColor(.red)
+                                MyImage(imageName: "power", imageColor: .red)
                             }.frame(maxWidth: .infinity, alignment: .center)
                         }
                         

@@ -23,7 +23,7 @@ struct CreateTeamView: View {
                 }) {
                     HStack {
                         Image(systemName: "chevron.left")
-                        Text("Projelerim")
+                        Text("Takımlarım")
                     }.padding(.leading)
                 }
             }.frame(maxWidth: .infinity, alignment: .leading)
@@ -35,20 +35,14 @@ struct CreateTeamView: View {
                         
                         if teamList.newName != "" {
                             if teamList.isOk {
-                                Image(systemName: "checkmark.circle")
-                                    .imageScale(.large)
-                                    .frame(width: 40, height: 40, alignment: .center)
-                                    .foregroundColor(.green)
+                                MyImage(imageName: "checkmark.circle", imageColor: .green)
                             }
                             else {
-                                Image(systemName: "x.circle")
-                                    .imageScale(.large)
-                                    .frame(width: 40, height: 40, alignment: .center)
-                                    .foregroundColor(.red)
+                                MyImage(imageName: "x.circle",imageColor: .red)
                                     .alert(isPresented: $showTeamNameAlert){
                                         Alert(title: Text(""), message: Text("Zaten \(teamList.newName) isminde takımınız var."), dismissButton: .default(Text("Tamam")))
-                                }.onTapGesture {
-                                    self.showTeamNameAlert = true
+                                    }.onTapGesture {
+                                        self.showTeamNameAlert = true
                                 }
                             }
                         }

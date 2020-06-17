@@ -17,7 +17,9 @@ struct MyTextField: View {
     var body: some View {
         VStack(spacing: 0) {
             
-            Text(placeHolder).frame(height: 10).frame(maxWidth: .infinity, alignment: .leading).foregroundColor(.grayColor).font(.system(size: 10))
+            if placeHolder != "" {
+                Text(placeHolder).frame(height: 10).frame(maxWidth: .infinity, alignment: .leading).foregroundColor(.grayColor).font(.system(size: 10))
+            }
             
             HStack(spacing: 0) {
                 TextField("", text: $value)

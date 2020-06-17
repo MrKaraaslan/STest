@@ -35,7 +35,7 @@ class TeamClass: ObservableObject {
     }
     
     
-    @Published var allTeams: [Team] = []
+    var allTeams: [Team] = []
     @Published var createdList: [Team] = []
     @Published var memberList: [Team] = []
     
@@ -48,7 +48,7 @@ class TeamClass: ObservableObject {
         createdList = []
         memberList = []
         for team in allTeams {
-            if team.creator == "self" {
+            if team.creator == "self" { //: change it control users name / == userName...
                 createdList.append(team)
             }
             else {
