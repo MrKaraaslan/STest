@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0E2868249B70900021E9CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E2867249B70900021E9CF /* User.swift */; };
 		AA32E08C243E057000CBBFF4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32E08B243E057000CBBFF4 /* ProfileView.swift */; };
 		AA32E08E243E079800CBBFF4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32E08D243E079800CBBFF4 /* ImagePicker.swift */; };
 		AA33ED302499739C00857341 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33ED2F2499739C00857341 /* Project.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA0E2867249B70900021E9CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AA32E08B243E057000CBBFF4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		AA32E08D243E079800CBBFF4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AA33ED2F2499739C00857341 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				AA843E3D243B8571001B57B8 /* AppDelegate.swift */,
 				AA843E3F243B8571001B57B8 /* SceneDelegate.swift */,
+				AA0E2867249B70900021E9CF /* User.swift */,
 				AA843E41243B8571001B57B8 /* ContentView.swift */,
 				AA350A3F243C87E1008476CF /* RegisterMotherView.swift */,
 				AA843E51243B85EB001B57B8 /* SignInView.swift */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0E2868249B70900021E9CF /* User.swift in Sources */,
 				AA33ED322499756C00857341 /* Person.swift in Sources */,
 				AA73D5A5244894AB00BA9041 /* MyText.swift in Sources */,
 				AAF8CEA5244B415900F19B20 /* CreateTeamView.swift in Sources */,

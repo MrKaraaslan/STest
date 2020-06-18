@@ -18,11 +18,9 @@ struct CreateProjectView: View {
     @State var team = ""
     
     @State var additionalList: [AdditionalField] = []
-    @State var index = 0
+    @State var steps: [Step] = []
     
     @State var useNumber = false
-    @State var useAmount = false
-    @State var useDeadline = false
     
     
     
@@ -37,13 +35,13 @@ struct CreateProjectView: View {
                         HStack {
                             Image(systemName: "chevron.left")
                             Text("Projelerim")
-                        }.padding(.leading)
+                        }
                     }
                     
                     Spacer()
                     MyImage(imageName: "questionmark.circle")
                 }
-            }.frame(maxWidth: .infinity, alignment: .leading)
+            }.padding([.leading, .trailing])
             
             VStack {
                 
@@ -90,18 +88,16 @@ struct CreateProjectView: View {
                             HStack {
                                 field
                                 
-                                Button(action: {
-                                    self.removeField(id: field.id)
-                                }) {
-                                    MyImage(imageName: "minus.circle", imageColor: .red)
+                                MyImage(imageName: "minus.circle", imageColor: .red)
+                                    .onTapGesture {
+                                        self.removeField(id: field.id)
                                 }
                             }
                         }
                         
-                        Button(action: {
-                            self.addField()
-                        }) {
-                            MyImage(imageName: "plus.circle")
+                        MyImage(imageName: "plus.circle")
+                            .onTapGesture {
+                                self.addField()
                         }
                     }
                     
@@ -112,7 +108,21 @@ struct CreateProjectView: View {
                     }
                     
                     Section(header: Text("Adımlar")) {
-                        Text("never mind")
+                        ForEach(self.steps, id: \.id) {step in
+                            HStack {
+                                step
+                                
+                                MyImage(imageName: "minus.circle", imageColor: .red)
+                                    .onTapGesture {
+                                        self.removeStep(id: step.id)
+                                }
+                            }
+                        }
+                        
+                        MyImage(imageName: "plus.circle")
+                            .onTapGesture {
+                                self.addStep()
+                        }
                     }
                 }
                 
@@ -152,6 +162,21 @@ struct CreateProjectView: View {
             return false
         }
     }
+    
+    func addStep() {
+        
+        let newStep = Step()
+        steps.append(newStep)
+    }
+    
+    func removeStep(id: UUID) {
+        steps.removeAll { (Step) -> Bool in
+            if Step.id == id {
+                return true
+            }
+            return false
+        }
+    }
 }
 
 struct AdditionalField: View {
@@ -160,6 +185,15 @@ struct AdditionalField: View {
     @State var text = ""
     var body: some View {
         MyTextField(placeHolder: "", imageName: "", value: $text)
+    }
+}
+
+struct Step: View {
+    
+    var id = UUID()
+    @State var mission = ""
+    var body: some View {
+        MyTextField(placeHolder: "Görev", imageName: "", value: $mission)
     }
 }
 

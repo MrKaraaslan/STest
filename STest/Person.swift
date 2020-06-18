@@ -14,7 +14,7 @@ class PersonClass {
 
 struct Person {
     
-    var id = UUID()
+    var id = UUID().uuidString
     var name: String
     var phoneNumber: String
     var email: String

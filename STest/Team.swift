@@ -61,7 +61,7 @@ class TeamClass: ObservableObject {
 
 struct Team: Identifiable {
     
-    var id = UUID()
+    var id = UUID().uuidString
     var creator: String
     var teamImage: Image
     var teamName: String
