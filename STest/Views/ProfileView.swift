@@ -91,7 +91,7 @@ struct ProfileView: View {
                                     ])
                             }
                         }.sheet(isPresented: $showImagePicker, content: {
-                            CaptureImageView(isShown: self.$showImagePicker, image: self.$userImage, useCamera: self.$useCamera)
+                            ImagePickerView(isShown: self.$showImagePicker, image: self.$userImage, useCamera: self.$useCamera)
                         })
                     }
                     // user image ends

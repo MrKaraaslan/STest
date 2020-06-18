@@ -1,5 +1,5 @@
 //
-//  ImagePicker.swift
+//  ImagePickerView.swift
 //  STest
 //
 //  Created by Mehmet Karaaslan on 8.04.2020.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CaptureImageView {
+struct ImagePickerView {
 
     // MARK:  properties
     @Binding var isShown: Bool
@@ -20,8 +20,8 @@ struct CaptureImageView {
     }
 }
 
-extension CaptureImageView: UIViewControllerRepresentable {
-    func makeUIViewController(context: UIViewControllerRepresentableContext<CaptureImageView>) -> UIImagePickerController {
+extension ImagePickerView: UIViewControllerRepresentable {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePickerView>) -> UIImagePickerController {
         
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
@@ -32,7 +32,7 @@ extension CaptureImageView: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: UIImagePickerController,
-    context: UIViewControllerRepresentableContext<CaptureImageView>) {
+    context: UIViewControllerRepresentableContext<ImagePickerView>) {
 
     }
 }

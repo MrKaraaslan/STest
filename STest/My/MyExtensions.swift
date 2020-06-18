@@ -1,5 +1,5 @@
 //
-//  Extensions.swift
+//  MyExtensions.swift
 //  STest
 //
 //  Created by Mehmet Karaaslan on 6.04.2020.

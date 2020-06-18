@@ -28,7 +28,7 @@
 		AA843E47243B8571001B57B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA843E46243B8571001B57B8 /* Preview Assets.xcassets */; };
 		AA843E4A243B8571001B57B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA843E48243B8571001B57B8 /* LaunchScreen.storyboard */; };
 		AA843E52243B85EB001B57B8 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E51243B85EB001B57B8 /* SignInView.swift */; };
-		AA843E54243B8652001B57B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E53243B8652001B57B8 /* Extensions.swift */; };
+		AA843E54243B8652001B57B8 /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E53243B8652001B57B8 /* MyExtensions.swift */; };
 		AA843E56243B9FEF001B57B8 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E55243B9FEF001B57B8 /* MyTextField.swift */; };
 		AA843E5A243BA529001B57B8 /* MySecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E59243BA529001B57B8 /* MySecureField.swift */; };
 		AA843E5C243BC8CA001B57B8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA843E5B243BC8CA001B57B8 /* SignUpView.swift */; };
@@ -62,7 +62,7 @@
 		AA843E49243B8571001B57B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA843E4B243B8571001B57B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA843E51243B85EB001B57B8 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		AA843E53243B8652001B57B8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AA843E53243B8652001B57B8 /* MyExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
 		AA843E55243B9FEF001B57B8 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		AA843E59243BA529001B57B8 /* MySecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySecureField.swift; sourceTree = "<group>"; };
 		AA843E5B243BC8CA001B57B8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -83,6 +83,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA0E286D249B74780021E9CF /* My */ = {
+			isa = PBXGroup;
+			children = (
+				AA843E55243B9FEF001B57B8 /* MyTextField.swift */,
+				AA843E59243BA529001B57B8 /* MySecureField.swift */,
+				AA73D5A4244894AB00BA9041 /* MyText.swift */,
+				AA75CD802466E8CF00010989 /* MyNavigationButton.swift */,
+				AA73D5A624489DCA00BA9041 /* MyImage.swift */,
+				AA843E53243B8652001B57B8 /* MyExtensions.swift */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		AA0E286F249B7A3C0021E9CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA843E41243B8571001B57B8 /* ContentView.swift */,
+				AA555D28246AD80200A32F64 /* AppTabView.swift */,
+				AA350A3F243C87E1008476CF /* RegisterMotherView.swift */,
+				AA843E51243B85EB001B57B8 /* SignInView.swift */,
+				AA843E5B243BC8CA001B57B8 /* SignUpView.swift */,
+				AA350A3D243C7D11008476CF /* ForgotPasswordView.swift */,
+				AA32E08B243E057000CBBFF4 /* ProfileView.swift */,
+				AA66C37724435FBE008475B5 /* SettingsView.swift */,
+				AAF8CEA2244B1E0B00F19B20 /* TeamsView.swift */,
+				AA74CC75244B7D0700F6E100 /* TeamDetailView.swift */,
+				AAF8CEA4244B415900F19B20 /* CreateTeamView.swift */,
+				AA7B6B022449EB0000CD5527 /* ProjectsView.swift */,
+				AAE32905244A27A900A474F3 /* CreateProjectView.swift */,
+				AA32E08D243E079800CBBFF4 /* ImagePicker.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA0E2870249B7A9B0021E9CF /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				AA0E2867249B70900021E9CF /* User.swift */,
+				AAF8CEA6244B427100F19B20 /* Team.swift */,
+				AA33ED2F2499739C00857341 /* Project.swift */,
+				AA33ED312499756C00857341 /* Person.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
 		AA843E31243B8570001B57B8 = {
 			isa = PBXGroup;
 			children = (
@@ -104,30 +149,9 @@
 			children = (
 				AA843E3D243B8571001B57B8 /* AppDelegate.swift */,
 				AA843E3F243B8571001B57B8 /* SceneDelegate.swift */,
-				AA0E2867249B70900021E9CF /* User.swift */,
-				AA843E41243B8571001B57B8 /* ContentView.swift */,
-				AA350A3F243C87E1008476CF /* RegisterMotherView.swift */,
-				AA843E51243B85EB001B57B8 /* SignInView.swift */,
-				AA843E5B243BC8CA001B57B8 /* SignUpView.swift */,
-				AA350A3D243C7D11008476CF /* ForgotPasswordView.swift */,
-				AA555D28246AD80200A32F64 /* AppTabView.swift */,
-				AA32E08B243E057000CBBFF4 /* ProfileView.swift */,
-				AA66C37724435FBE008475B5 /* SettingsView.swift */,
-				AAF8CEA2244B1E0B00F19B20 /* TeamsView.swift */,
-				AA74CC75244B7D0700F6E100 /* TeamDetailView.swift */,
-				AAF8CEA4244B415900F19B20 /* CreateTeamView.swift */,
-				AAF8CEA6244B427100F19B20 /* Team.swift */,
-				AA7B6B022449EB0000CD5527 /* ProjectsView.swift */,
-				AAE32905244A27A900A474F3 /* CreateProjectView.swift */,
-				AA33ED2F2499739C00857341 /* Project.swift */,
-				AA32E08D243E079800CBBFF4 /* ImagePicker.swift */,
-				AA33ED312499756C00857341 /* Person.swift */,
-				AA75CD802466E8CF00010989 /* MyNavigationButton.swift */,
-				AA843E55243B9FEF001B57B8 /* MyTextField.swift */,
-				AA843E59243BA529001B57B8 /* MySecureField.swift */,
-				AA73D5A4244894AB00BA9041 /* MyText.swift */,
-				AA73D5A624489DCA00BA9041 /* MyImage.swift */,
-				AA843E53243B8652001B57B8 /* Extensions.swift */,
+				AA0E286F249B7A3C0021E9CF /* Views */,
+				AA0E2870249B7A9B0021E9CF /* Modals */,
+				AA0E286D249B74780021E9CF /* My */,
 				AA843E43243B8571001B57B8 /* Assets.xcassets */,
 				AA843E48243B8571001B57B8 /* LaunchScreen.storyboard */,
 				AA843E4B243B8571001B57B8 /* Info.plist */,
@@ -221,7 +245,7 @@
 				AAF8CEA5244B415900F19B20 /* CreateTeamView.swift in Sources */,
 				AA843E5A243BA529001B57B8 /* MySecureField.swift in Sources */,
 				AA7B6B032449EB0000CD5527 /* ProjectsView.swift in Sources */,
-				AA843E54243B8652001B57B8 /* Extensions.swift in Sources */,
+				AA843E54243B8652001B57B8 /* MyExtensions.swift in Sources */,
 				AA555D29246AD80200A32F64 /* AppTabView.swift in Sources */,
 				AA350A40243C87E1008476CF /* RegisterMotherView.swift in Sources */,
 				AA74CC76244B7D0700F6E100 /* TeamDetailView.swift in Sources */,
