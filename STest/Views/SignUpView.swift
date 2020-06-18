@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SignUpView: View {
     
-    @Binding var current: Int
+    @Binding var currentPage: Int
     
     @State var name = ""
     @State var email = ""
@@ -30,7 +30,7 @@ struct SignUpView: View {
                 Button(action: {
                     //: firebase and go back
                     withAnimation(){
-                        self.current = 1
+                        self.currentPage = 1
                     }
                     
                 }) {
@@ -44,7 +44,7 @@ struct SignUpView: View {
                 Button(action: {
                     //: navigate
                     withAnimation(){
-                        self.current = 1
+                        self.currentPage = 1
                     }
                 }) {
                     Text("Giriş Yap")
@@ -61,6 +61,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(current: .constant(2))
+        SignUpView(currentPage: .constant(2))
     }
 }

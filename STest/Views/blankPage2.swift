@@ -1,5 +1,5 @@
 //
-//  blankPage.swift
+//  blankPage2.swift
 //  STest
 //
 //  Created by Mehmet Karaaslan on 18.06.2020.
@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct blankPage: View {
+struct blankPage2: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("blank 2")
     }
 }
 
-struct blankPage_Previews: PreviewProvider {
+struct blankPage2_Previews: PreviewProvider {
     static var previews: some View {
-        blankPage()
+        blankPage2()
     }
 }

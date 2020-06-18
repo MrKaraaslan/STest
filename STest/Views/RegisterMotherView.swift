@@ -10,18 +10,18 @@ import SwiftUI
 
 struct RegisterMotherView: View {
     
-    @State var current = 1
+    @State var currentPage = 1
     
     var body: some View {
         VStack {
-            if current == 1 {
-                SignInView(current: $current)
+            if currentPage == 1 {
+                SignInView(currentPage: $currentPage)
                     .transition(.scale)
-            }else if current == 2 {
-                SignUpView(current: $current)
+            }else if currentPage == 2 {
+                SignUpView(currentPage: $currentPage)
                     .transition(.scale)
-            }else if current == 3 {
-                ForgotPasswordView(current: $current)
+            }else if currentPage == 3 {
+                ForgotPasswordView(currentPage: $currentPage)
                     .transition(.scale)
             }
         }

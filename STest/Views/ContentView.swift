@@ -9,13 +9,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var current: UserClass
+    
     var body: some View {
-        Text("hihihihihihi")
+        VStack {
+            if current.isLoggedIn {
+                AppTabView()
+            }
+            else {
+                RegisterMotherView()
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(UserClass())
     }
 }

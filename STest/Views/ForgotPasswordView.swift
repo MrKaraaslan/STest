@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ForgotPasswordView: View {
     
-    @Binding var current: Int
+    @Binding var currentPage: Int
     
     @State var email = ""
     
@@ -21,7 +21,7 @@ struct ForgotPasswordView: View {
                 Button(action: {
                     //: firebase and go back
                     withAnimation(){
-                        self.current = 1
+                        self.currentPage = 1
                     }
                 }) {
                     Text("Şifremi Sıfırla")
@@ -32,7 +32,7 @@ struct ForgotPasswordView: View {
                 Button(action: {
                     //: navigate
                     withAnimation(){
-                        self.current = 1
+                        self.currentPage = 1
                     }
                 }) {
                     Text("Giriş Yap")
@@ -46,6 +46,6 @@ struct ForgotPasswordView: View {
 
 struct ForgotPasswordView_Previews: PreviewProvider {
     static var previews: some View {
-        ForgotPasswordView(current: .constant(3))
+        ForgotPasswordView(currentPage: .constant(3))
     }
 }

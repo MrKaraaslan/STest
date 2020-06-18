@@ -10,6 +10,9 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @EnvironmentObject var current: UserClass
+    @State var logout = false
+    
     @State var userImage: Image? = nil
     @State var showImageSheet = false
     @State var showImagePicker = false
@@ -31,8 +34,12 @@ struct ProfileView: View {
                         .onTapGesture {
                             self.showSettings = true
                         }
-                        .sheet(isPresented: $showSettings, content: {
-                            SettingsView()
+                    .sheet(isPresented: $showSettings, onDismiss: {
+                        if self.logout {
+                            self.current.isLoggedIn = false
+                        }
+                    }, content: {
+                        SettingsView(logout: self.$logout)
                         })
                     Spacer()
                     MyImage(imageName: "bell")

@@ -10,7 +10,8 @@ import SwiftUI
 
 struct SignInView: View {
     
-    @Binding var current: Int
+    @EnvironmentObject var current: UserClass
+    @Binding var currentPage: Int
     
     @State var email = ""
     @State var password = ""
@@ -28,6 +29,7 @@ struct SignInView: View {
                 
                 Button(action: {
                      //: firebase and navigation
+                    self.current.isLoggedIn = true
                 }) {
                     Text("Giriş yap")
                 }
@@ -39,7 +41,7 @@ struct SignInView: View {
                     .padding(.top, 32)
                     .onTapGesture {
                         withAnimation(){
-                            self.current = 3
+                            self.currentPage = 3
                         }
                 }
                 
@@ -50,7 +52,7 @@ struct SignInView: View {
                 Button(action: {
                     //: navigate
                     withAnimation(){
-                        self.current = 2
+                        self.currentPage = 2
                     }
                 }) {
                     Text("Kayıt Ol")
@@ -64,6 +66,6 @@ struct SignInView: View {
 
 struct SignIn_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(current: .constant(1))
+        SignInView(currentPage: .constant(1))
     }
 }

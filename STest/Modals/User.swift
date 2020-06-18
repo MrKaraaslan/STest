@@ -8,10 +8,28 @@
 
 import SwiftUI
 
+class UserClass: ObservableObject {
+    
+    @Published var isLoggedIn: Bool
+    @Published var user: User
+    
+    init() {
+        self.isLoggedIn = false
+        self.user = User()
+    }
+}
+
+
 struct User {
     
     var id = UUID().uuidString
     var name: String
     var email: String
     var memberList: [String] //list of team id's
+    
+    init() {
+        name = ""
+        email = ""
+        memberList = []
+    }
 }

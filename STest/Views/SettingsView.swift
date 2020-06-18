@@ -10,6 +10,9 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    @Binding var logout: Bool
+    
     @State var isNotification = true
     @State var lang = 1
     
@@ -22,11 +25,16 @@ struct SettingsView: View {
                 VStack {
                     Form {
                         Section {
-                            HStack {
-                                Text("Çıkış yap")
-                                MyImage(imageName: "power", imageColor: .red)
-                            }.frame(maxWidth: .infinity, alignment: .center)
-                        }
+                            Button(action: {
+                                self.logout = true
+                                self.presentationMode.wrappedValue.dismiss()
+                            }) {
+                                HStack {
+                                    Text("Çıkış yap").foregroundColor(.black)
+                                    MyImage(imageName: "power", imageColor: .red)
+                                }
+                            }
+                        }.frame(maxWidth: .infinity, alignment: .center)
                         
                         Section {
                             Toggle(isOn: $isNotification) {
@@ -61,6 +69,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(logout: .constant(false))
     }
 }

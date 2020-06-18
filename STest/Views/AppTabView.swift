@@ -15,15 +15,22 @@ struct AppTabView: View {
     var body: some View {
         TabView {
             
+            blankPage1()
+                .tabItem {
+                    Image(systemName: "x.circle")
+                    Text("test-1")
+            }
+            
+            blankPage2()
+                .tabItem {
+                    Image(systemName: "x.circle.fill")
+                    Text("test-2")
+            }
+            
             ProfileView().environmentObject(teamList)
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("profile")
-            }
-            RegisterMotherView()
-                .tabItem {
-                    Image(systemName: "lock")
-                    Text("example")
             }
         }
     }
