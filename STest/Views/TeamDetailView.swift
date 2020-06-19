@@ -10,8 +10,6 @@ import SwiftUI
 
 struct TeamDetailView: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     @State var team: Team
     var isCreator: Bool
     
@@ -19,17 +17,6 @@ struct TeamDetailView: View {
     
     var body: some View {
         VStack {
-            VStack {
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                        Text("Takımlarım")
-                    }.padding(.leading)
-                }
-            }.frame(maxWidth: .infinity, alignment: .leading)
-            
             VStack {
                 VStack {
                     team.teamImage
@@ -85,10 +72,9 @@ struct TeamDetailView: View {
                 
                 
 
-            }.padding([.leading, .trailing, .bottom])
+            }.padding([.leading, .trailing, .bottom, .top])
         }
         .navigationBarTitle("")
-        .navigationBarHidden(true)
     }
 }
 

@@ -69,6 +69,9 @@ struct Team: Identifiable {
     var teamCapacitiy: Int
     
     var teamFullness: Double {return Double(teamMembers)/Double(teamCapacitiy)}
+    
+    var projectList: [Project] = []
+    //: add init if necessary
 }
 
 let teams = [

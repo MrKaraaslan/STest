@@ -10,7 +10,6 @@ import SwiftUI
 
 struct CreateProjectView: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var teamList: TeamClass
     
     @State var projectName = ""
@@ -26,23 +25,6 @@ struct CreateProjectView: View {
     
     var body: some View {
         VStack {
-            
-            VStack {
-                HStack {
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        HStack {
-                            Image(systemName: "chevron.left")
-                            Text("Projelerim")
-                        }
-                    }
-                    
-                    Spacer()
-                    MyImage(imageName: "questionmark.circle")
-                }
-            }.padding([.leading, .trailing])
-            
             VStack {
                 
                 Form {
@@ -75,8 +57,6 @@ struct CreateProjectView: View {
                                         .tag(team.teamName)
                                     }
                                 }
-                                .navigationBarTitle("")
-                                .navigationBarHidden(true)
                             }
                         }
                     }
@@ -134,9 +114,8 @@ struct CreateProjectView: View {
                     // check team -> if toggle is opened team must be selected
                     
                 }) {
-                    Text("Proje Oluştur")
+                    Text("Proje Oluştur").myButton()
                 }
-                .myButton()
                 .padding([.leading, .trailing, .bottom])
             }
             //.frame(maxHeight: .infinity) not needed if form is used
@@ -144,8 +123,7 @@ struct CreateProjectView: View {
             
             
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+        .navigationBarTitle(Text("Proje Oluştur"))
     }
     
     func addField() {

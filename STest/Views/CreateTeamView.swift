@@ -10,24 +10,12 @@ import SwiftUI
 
 struct CreateTeamView: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var teamList: TeamClass
     
     @State var showTeamNameAlert = false
     
     var body: some View {
         VStack {
-            VStack {
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                        Text("Takımlarım")
-                    }.padding(.leading)
-                }
-            }.frame(maxWidth: .infinity, alignment: .leading)
-            
             Form {
                 Section {
                     HStack {
@@ -54,13 +42,11 @@ struct CreateTeamView: View {
             Button(action: {
                 
             }) {
-                Text("Takım Oluştur")
+                Text("Takım Oluştur").myButton()
             }
-            .myButton()
             .padding([.leading, .trailing, .bottom])
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+        .navigationBarTitle(Text("Takım Oluştur"))
     }
 }
 

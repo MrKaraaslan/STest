@@ -24,8 +24,8 @@ struct ForgotPasswordView: View {
                         self.currentPage = 1
                     }
                 }) {
-                    Text("Şifremi Sıfırla")
-                }.myButton()
+                    Text("Şifremi Sıfırla").myButton()
+                }
             }.frame(maxHeight: .infinity)
             
             VStack {

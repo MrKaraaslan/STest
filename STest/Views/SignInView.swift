@@ -31,9 +31,8 @@ struct SignInView: View {
                      //: firebase and navigation
                     self.current.isLoggedIn = true
                 }) {
-                    Text("Giriş yap")
+                    Text("Giriş yap").myButton()
                 }
-                .myButton()
                 .padding(.top, 32)
                 
                 Text("Şifremi Unuttum")

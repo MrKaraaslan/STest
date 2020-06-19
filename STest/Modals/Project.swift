@@ -37,27 +37,12 @@ class ProjectClass: ObservableObject {
     func getTeams() {
         //:firebase
         allProjects = projects
-        seperator()
-    }
-    func seperator() {
-        createdList = []
-        memberList = []
-        for project in allProjects {
-            if project.creator == "self" { //: change it control users name / == userName...
-                createdList.append(project)
-            }
-            else {
-                memberList.append(project)
-            }
-        }
     }
 }
 
-struct Project {
+struct Project { //: save project under team folder if there is a team or save it under personal folder created with user id (maybe?)
     
     var id = UUID().uuidString
-    var creator: String
-    var teamId: String
     var projectName: String
     
     var additionalInfos: [String]

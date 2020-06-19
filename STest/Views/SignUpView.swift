@@ -34,9 +34,8 @@ struct SignUpView: View {
                     }
                     
                 }) {
-                    Text("Kayıt Ol")
+                    Text("Kayıt Ol").myButton()
                 }
-                .myButton()
                 .padding(.top, 32)
             }.frame(maxHeight: .infinity)
             

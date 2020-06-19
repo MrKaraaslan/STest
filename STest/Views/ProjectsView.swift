@@ -10,24 +10,10 @@ import SwiftUI
 
 struct ProjectsView: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     @EnvironmentObject var teamList: TeamClass
     
     var body: some View {
         VStack {
-            
-            VStack {
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                        Text("Profil")
-                    }.padding(.leading)
-                }
-            }.frame(maxWidth: .infinity, alignment: .leading)
-            
             Form {
                 Section(header: Text("Oluşturduğum projeler")) {
                     Text("coming")
@@ -44,8 +30,8 @@ struct ProjectsView: View {
                 }
             }.padding([.leading, .trailing, .bottom])
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+        .navigationBarTitle("Projelerim")
+        
     }
 }
 

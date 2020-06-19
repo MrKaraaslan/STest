@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var logout: Bool
     
     @State var isNotification = true

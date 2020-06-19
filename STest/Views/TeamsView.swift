@@ -10,28 +10,10 @@ import SwiftUI
 
 struct TeamsView: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     @EnvironmentObject var teamList: TeamClass
     
     var body: some View {
         VStack {
-            VStack {
-                HStack {
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        HStack {
-                            Image(systemName: "chevron.left")
-                            Text("Profil")
-                        }
-                    }
-                    Spacer()
-                    MyImage(imageName: "questionmark.circle")
-                }
-            }.padding([.leading, .trailing])
-            
-            
             Form {
                 Section(header: Text("Oluşturduğum Takımlar")) {
                     if teamList.createdList.isEmpty {
@@ -66,8 +48,10 @@ struct TeamsView: View {
                 }
             }.padding([.leading, .trailing, .bottom])
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+        .navigationBarTitle(Text("Takımlarım"))
+        .navigationBarItems(trailing:
+            MyImage(imageName: "questionmark.circle")
+        )
     }
 }
 

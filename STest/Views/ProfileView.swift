@@ -28,102 +28,103 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
-                    MyImage(imageName: "gear")
-                        .onTapGesture {
-                            self.showSettings = true
-                        }
-                    .sheet(isPresented: $showSettings, onDismiss: {
-                        if self.logout {
-                            self.current.isLoggedIn = false
-                        }
-                    }, content: {
-                        SettingsView(logout: self.$logout)
-                        })
-                    Spacer()
-                    MyImage(imageName: "bell")
-                }
-                VStack(spacing: 32) {
-                    //user image
-                    ZStack(alignment: .bottomTrailing) {
-                        if(userImage != nil){
-                            userImage?.resizable()
-                                .aspectRatio(contentMode: .fill)
+            VStack(spacing: 32) {
+                //user image
+                ZStack(alignment: .bottomTrailing) {
+                    if(userImage != nil){
+                        userImage?.resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 150, height: 150)
+                            .clipShape(Circle())
+                    }
+                    else {
+                        ZStack {
+                            Color.gray
                                 .frame(width: 150, height: 150)
-                                .clipShape(Circle())
-                        }
-                        else {
-                            ZStack {
-                                Color.gray
-                                    .frame(width: 150, height: 150)
-                                                    
-                                Image(systemName: "camera").imageScale(.large)
+                                                
+                            Image(systemName: "camera").imageScale(.large)
 
-                            }.clipShape(Circle())
-                        }
-                        
-                        Button(action: {
-                            self.showImageSheet = true
-                        }) {
-                            MyImage(imageName: "person.crop.circle.badge.plus")
-                                .background(Color.white)
-                                .clipShape(Circle())
-                                .actionSheet(isPresented: $showImageSheet){
-                                    ActionSheet(
-                                        title: Text("İşleminizi Seçiniz"),
-                                        buttons: userImage == nil ? [
-                                            .default(Text("Fotoğraf Çek"), action: {
-                                                self.useCamera = true
-                                                self.showImagePicker = true
-                                            }),
-                                            .default(Text("Galeriden Seç"), action: {
-                                                self.useCamera = false
-                                                self.showImagePicker = true
-                                            }),
-                                            .cancel(Text("Vazgeç"))
-                                        ]:[
-                                            .default(Text("Fotoğraf Çek"), action: {
-                                                self.useCamera = true
-                                                self.showImagePicker = true
-                                            }),
-                                            .default(Text("Galeriden Seç"), action: {
-                                                self.useCamera = false
-                                                self.showImagePicker = true
-                                            }),
-                                            .destructive(Text("Fotoğrafı Kaldır"), action: {
-                                                self.deleteImage()
-                                            }),
-                                            .cancel(Text("Vazgeç"))
-                                    ])
-                            }
-                        }.sheet(isPresented: $showImagePicker, content: {
-                            ImagePickerView(isShown: self.$showImagePicker, image: self.$userImage, useCamera: self.$useCamera)
-                        })
+                        }.clipShape(Circle())
                     }
-                    // user image ends
                     
-                    VStack(spacing: 16) {
-                        MyText(header: Text("Kullanıcı Adı"), text: userName, imageName: "person.circle")
-                        MyText(header: Text("Email"), text: userMail, imageName: "envelope")
-                        NavigationLink(destination: TeamsView()) {
-                            MyNavigationButton(text: Text("Takımlarım"))
+                    Button(action: {
+                        self.showImageSheet = true
+                    }) {
+                        MyImage(imageName: "person.crop.circle.badge.plus")
+                            .background(Color.white)
+                            .clipShape(Circle())
+                            .actionSheet(isPresented: $showImageSheet){
+                                ActionSheet(
+                                    title: Text("İşleminizi Seçiniz"),
+                                    buttons: userImage == nil ? [
+                                        .default(Text("Fotoğraf Çek"), action: {
+                                            self.useCamera = true
+                                            self.showImagePicker = true
+                                        }),
+                                        .default(Text("Galeriden Seç"), action: {
+                                            self.useCamera = false
+                                            self.showImagePicker = true
+                                        }),
+                                        .cancel(Text("Vazgeç"))
+                                    ]:[
+                                        .default(Text("Fotoğraf Çek"), action: {
+                                            self.useCamera = true
+                                            self.showImagePicker = true
+                                        }),
+                                        .default(Text("Galeriden Seç"), action: {
+                                            self.useCamera = false
+                                            self.showImagePicker = true
+                                        }),
+                                        .destructive(Text("Fotoğrafı Kaldır"), action: {
+                                            self.deleteImage()
+                                        }),
+                                        .cancel(Text("Vazgeç"))
+                                ])
                         }
-                        NavigationLink(destination: ProjectsView()) {
-                            MyNavigationButton(text: Text("Projelerim"))
-                        }
-                        
-                        
-                        
-                        
-                        
+                    }.sheet(isPresented: $showImagePicker, content: {
+                        ImagePickerView(isShown: self.$showImagePicker, image: self.$userImage, useCamera: self.$useCamera)
+                    })
+                }.padding(.top)
+                // user image ends
+                
+                VStack(spacing: 16) {
+                    MyText(header: Text("Kullanıcı Adı"), text: userName, imageName: "person.circle")
+                    MyText(header: Text("Email"), text: userMail, imageName: "envelope")
+                    NavigationLink(destination: TeamsView()) {
+                        MyNavigationButton(text: Text("Takımlarım"))
                     }
-                }.frame(maxHeight: .infinity, alignment: .top)
+                    NavigationLink(destination: ProjectsView()) {
+                        MyNavigationButton(text: Text("Projelerim"))
+                    }
+                    
+                    
+                    
+                    
+                    
+                }
+                
                 
             }
+            .frame(maxHeight: .infinity, alignment: .top)
             .padding([.leading, .trailing])
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarItems(
+                leading:
+                MyImage(imageName: "gear")
+                    .onTapGesture {
+                        self.showSettings = true
+                }
+                .sheet(isPresented: $showSettings, onDismiss: {
+                    if self.logout {
+                        self.current.isLoggedIn = false
+                    }
+                }, content: {
+                    SettingsView(logout: self.$logout)
+                }),
+                trailing:
+                MyImage(imageName: "bell")
+            )
+            //.navigationBarHidden(true)
             .onAppear(perform: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { // Change `2.0` to the desired number of seconds.
                    // Code you want to be delayed
