@@ -29,6 +29,12 @@ struct SignInView: View {
                 
                 Button(action: {
                      //: firebase and navigation
+                    
+                    //test...
+                    self.current.info()
+                    self.current.teamData()
+                    //...test
+                    
                     self.current.isLoggedIn = true
                 }) {
                     Text("Giriş yap").myButton()

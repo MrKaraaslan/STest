@@ -10,25 +10,27 @@ import SwiftUI
 
 struct CreateTeamView: View {
     
-    @EnvironmentObject var teamList: TeamClass
+    @EnvironmentObject var current: UserClass
     
     @State var showTeamNameAlert = false
+    
+    @ObservedObject var newTeam = newTeamClass()
     
     var body: some View {
         VStack {
             Form {
                 Section {
                     HStack {
-                        MyTextField(placeHolder: "Takım Adı", imageName: "", value: $teamList.newName)
+                        MyTextField(placeHolder: "Takım Adı", imageName: "", value: $newTeam.name)
                         
-                        if teamList.newName != "" {
-                            if teamList.isOk {
+                        if newTeam.name != "" {
+                            if newTeam.isOk {
                                 MyImage(imageName: "checkmark.circle", imageColor: .green)
                             }
                             else {
                                 MyImage(imageName: "x.circle",imageColor: .red)
                                     .alert(isPresented: $showTeamNameAlert){
-                                        Alert(title: Text(""), message: Text("Zaten \(teamList.newName) isminde takımınız var."), dismissButton: .default(Text("Tamam")))
+                                        Alert(title: Text(""), message: Text("Zaten \(newTeam.name) isminde takımınız var."), dismissButton: .default(Text("Tamam")))
                                     }.onTapGesture {
                                         self.showTeamNameAlert = true
                                 }
@@ -47,11 +49,14 @@ struct CreateTeamView: View {
             .padding([.leading, .trailing, .bottom])
         }
         .navigationBarTitle(Text("Takım Oluştur"))
+        .onAppear(perform: {
+            self.newTeam.getTeams(self.current.cTeams)
+        })
     }
 }
 
 struct CreateTeam_Previews: PreviewProvider {
     static var previews: some View {
-        CreateTeamView().environmentObject(TeamClass())
+        CreateTeamView().environmentObject(UserClass())
     }
 }

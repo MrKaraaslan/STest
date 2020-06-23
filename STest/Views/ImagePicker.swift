@@ -25,6 +25,7 @@ extension ImagePickerView: UIViewControllerRepresentable {
         
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
+        picker.allowsEditing = true
         if useCamera {
             picker.sourceType = .camera
         }
@@ -50,7 +51,7 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
 
     func imagePickerController(_ picker: UIImagePickerController,
     didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let unwrapImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        guard let unwrapImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
         imageInCoordinator = Image(uiImage: unwrapImage)
         isCoordinatorShown = false
     }

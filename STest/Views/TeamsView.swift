@@ -10,17 +10,17 @@ import SwiftUI
 
 struct TeamsView: View {
     
-    @EnvironmentObject var teamList: TeamClass
+    @EnvironmentObject var current: UserClass
     
     var body: some View {
         VStack {
             Form {
                 Section(header: Text("Oluşturduğum Takımlar")) {
-                    if teamList.createdList.isEmpty {
+                    if current.cTeams.isEmpty {
                         Text("Henüz bir takım oluşturmadınız!")
                     }
                     else {
-                        ForEach(teamList.createdList, id: \.id) { team in
+                        ForEach(current.cTeams, id: \.id) { team in
                             NavigationLink(destination: TeamDetailView(team: team, isCreator: true)) {
                                 CreatedTeams(team: team)
                             }
@@ -28,11 +28,11 @@ struct TeamsView: View {
                     }
                 }
                 Section(header: Text("Katıldığım Takımlar")) {
-                    if teamList.memberList.isEmpty {
+                    if current.mTeams.isEmpty {
                         Text("Henüz bir takıma katılmadınız!")
                     }
                     else {
-                        ForEach(teamList.memberList, id: \.id) { team in
+                        ForEach(current.mTeams, id: \.id) { team in
                             NavigationLink(destination: TeamDetailView(team: team, isCreator: false)) {
                                 MemberTeams(team: team)
                             }
@@ -43,7 +43,7 @@ struct TeamsView: View {
             }
             
             VStack {
-                NavigationLink(destination: CreateTeamView()) {
+                NavigationLink(destination: CreateTeamView().environmentObject(current)) {
                     MyNavigationButton(text: Text("Takım Oluştur"))
                 }
             }.padding([.leading, .trailing, .bottom])
@@ -57,7 +57,7 @@ struct TeamsView: View {
 
 struct TeamsView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamsView().environmentObject(TeamClass())
+        TeamsView().environmentObject(UserClass())
     }
 }
 

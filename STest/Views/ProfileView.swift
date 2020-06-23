@@ -13,16 +13,11 @@ struct ProfileView: View {
     @EnvironmentObject var current: UserClass
     @State var logout = false
     
-    @State var userImage: Image? = nil
     @State var showImageSheet = false
     @State var showImagePicker = false
     @State var useCamera = false
     
     @State var showSettings = false
-    
-    @State var userName = "an example name"
-    @State var userMail = "example@example.com"
-    //@State var userPhone = "" //: so i need this?
     
     @EnvironmentObject var teamList: TeamClass
     
@@ -31,8 +26,9 @@ struct ProfileView: View {
             VStack(spacing: 32) {
                 //user image
                 ZStack(alignment: .bottomTrailing) {
-                    if(userImage != nil){
-                        userImage?.resizable()
+                    if(self.current.user.image != nil){
+                        self.current.user.image?
+                            .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 150, height: 150)
                             .clipShape(Circle())
@@ -56,7 +52,7 @@ struct ProfileView: View {
                             .actionSheet(isPresented: $showImageSheet){
                                 ActionSheet(
                                     title: Text("İşleminizi Seçiniz"),
-                                    buttons: userImage == nil ? [
+                                    buttons: self.current.user.image == nil ? [
                                         .default(Text("Fotoğraf Çek"), action: {
                                             self.useCamera = true
                                             self.showImagePicker = true
@@ -82,15 +78,15 @@ struct ProfileView: View {
                                 ])
                         }
                     }.sheet(isPresented: $showImagePicker, content: {
-                        ImagePickerView(isShown: self.$showImagePicker, image: self.$userImage, useCamera: self.$useCamera)
+                        ImagePickerView(isShown: self.$showImagePicker, image: self.$current.user.image, useCamera: self.$useCamera)
                     })
                 }.padding(.top)
                 // user image ends
                 
                 VStack(spacing: 16) {
-                    MyText(header: Text("Kullanıcı Adı"), text: userName, imageName: "person.circle")
-                    MyText(header: Text("Email"), text: userMail, imageName: "envelope")
-                    NavigationLink(destination: TeamsView()) {
+                    MyText(header: Text("Kullanıcı Adı"), text: self.current.user.name, imageName: "person.circle")
+                    MyText(header: Text("Email"), text: self.current.user.email, imageName: "envelope")
+                    NavigationLink(destination: TeamsView().environmentObject(teamList).environmentObject(current)) {
                         MyNavigationButton(text: Text("Takımlarım"))
                     }
                     NavigationLink(destination: ProjectsView()) {
@@ -124,24 +120,16 @@ struct ProfileView: View {
                 trailing:
                 MyImage(imageName: "bell")
             )
-            //.navigationBarHidden(true)
-            .onAppear(perform: {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { // Change `2.0` to the desired number of seconds.
-                   // Code you want to be delayed
-                    self.teamList.getTeams()
-                }
-                
-            })
         }
     }
     
     func deleteImage(){
-        self.userImage = nil //: firebase
+        self.current.user.image = nil //: firebase
     }
 }
 
 struct Profileview_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView().environmentObject(TeamClass())
+        ProfileView().environmentObject(TeamClass()).environmentObject(UserClass())
     }
 }
