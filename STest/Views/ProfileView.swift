@@ -19,8 +19,6 @@ struct ProfileView: View {
     
     @State var showSettings = false
     
-    @EnvironmentObject var teamList: TeamClass
-    
     var body: some View {
         NavigationView {
             VStack(spacing: 32) {
@@ -86,10 +84,10 @@ struct ProfileView: View {
                 VStack(spacing: 16) {
                     MyText(header: Text("Kullanıcı Adı"), text: self.current.user.name, imageName: "person.circle")
                     MyText(header: Text("Email"), text: self.current.user.email, imageName: "envelope")
-                    NavigationLink(destination: TeamsView().environmentObject(teamList).environmentObject(current)) {
+                    NavigationLink(destination: TeamsView().environmentObject(current)) {
                         MyNavigationButton(text: Text("Takımlarım"))
                     }
-                    NavigationLink(destination: ProjectsView()) {
+                    NavigationLink(destination: ProjectsView().environmentObject(current)) {
                         MyNavigationButton(text: Text("Projelerim"))
                     }
                     
@@ -130,6 +128,6 @@ struct ProfileView: View {
 
 struct Profileview_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView().environmentObject(TeamClass()).environmentObject(UserClass())
+        ProfileView().environmentObject(UserClass())
     }
 }

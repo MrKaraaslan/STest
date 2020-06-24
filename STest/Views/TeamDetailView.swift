@@ -18,69 +18,66 @@ struct TeamDetailView: View {
     var body: some View {
         VStack {
             VStack {
-                VStack {
-                    team.teamImage
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(maxWidth: .infinity)
-                        .frame(width: 150, height: 150)
-                        .clipShape(Circle())
-                    
-                    MyText(header: Text("Takım adı"), text: team.teamName, imageName: "")
-                    
-                    if !isCreator {
-                        MyText(header: Text("Takım lideri"), text: team.creator, imageName: "")
-                    }
-                    Bar(members: team.teamMembers, capacity: team.teamCapacitiy, progress: team.teamFullness)
-                    
-                    
-                    
-                    
-                }
-                .frame(maxHeight: .infinity, alignment: .top)
-                
-                Button(action: {
-                    self.showDeleteSheet = true
-                }) {
-                    VStack {
-                        if self.isCreator {
-                            Text("Takımı Sil")
-                        }
-                        else {
-                            Text("Takımdan Ayrıl")
-                        }
-                    }
-                    .frame(height: 40)
+                team.teamImage
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
                     .frame(maxWidth: .infinity)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.red)
-                    )
-                    .foregroundColor(.red)
-                    .actionSheet(isPresented: $showDeleteSheet){
-                        ActionSheet(
-                            title: Text("Bu işlemi geri alamazsınız!"),
-                            message: isCreator ? Text("Takımı silmeniz bütün takım projelerini siler") : nil,
-                            buttons: [
-                                isCreator ?
-                                .destructive(Text("Takımı Sil")): //: actions
-                                .destructive(Text("Takımdan Ayrıl")),
-                                .cancel(Text("Vazgeç"))
-                            ])
+                    .frame(width: 150, height: 150)
+                    .clipShape(Circle())
+                
+                MyText(header: Text("Takım adı"), text: team.teamName, imageName: "")
+                
+                if !isCreator {
+                    MyText(header: Text("Takım lideri"), text: team.creator, imageName: "")
+                }
+                Bar(members: team.teamMembers, capacity: team.teamCapacitiy, progress: team.teamFullness)
+                
+                
+                
+                
+            }
+            .frame(maxHeight: .infinity, alignment: .top)
+            
+            Button(action: {
+                self.showDeleteSheet = true
+            }) {
+                VStack {
+                    if self.isCreator {
+                        Text("Takımı Sil")
+                    }
+                    else {
+                        Text("Takımdan Ayrıl")
                     }
                 }
-                
-                
+                .frame(height: 40)
+                .frame(maxWidth: .infinity)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.red)
+                )
+                .foregroundColor(.red)
+                .actionSheet(isPresented: $showDeleteSheet){
+                    ActionSheet(
+                        title: Text("Bu işlemi geri alamazsınız!"),
+                        message: isCreator ? Text("Takımı silmeniz bütün takım projelerini siler") : nil,
+                        buttons: [
+                            isCreator ?
+                            .destructive(Text("Takımı Sil")): //: actions
+                            .destructive(Text("Takımdan Ayrıl")),
+                            .cancel(Text("Vazgeç"))
+                        ])
+                }
+            }
+            
+            
 
-            }.padding([.leading, .trailing, .bottom, .top])
-        }
-        .navigationBarTitle("")
+        }.padding([.leading, .trailing, .bottom, .top])
     }
 }
 
 struct TeamDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamDetailView(team: teams[3], isCreator: false)
+        TeamDetailView(team: memberTeams[0], isCreator: false)
     }
 }
 

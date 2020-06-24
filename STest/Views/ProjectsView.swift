@@ -10,33 +10,33 @@ import SwiftUI
 
 struct ProjectsView: View {
     
-    @EnvironmentObject var teamList: TeamClass
+    @EnvironmentObject var current: UserClass
     
     var body: some View {
         VStack {
             Form {
-                Section(header: Text("Oluşturduğum projeler")) {
-                    Text("coming")
-                }
-                Section(header: Text("Katıldığım projeler")){
-                    Text("soon")
+                Section(header: Text("Projelerim")) {
+                    ForEach(current.pProjects, id: \.id) { project in
+                        NavigationLink(destination: ProjectDetailView(project: project)) {
+                            Text(project.projectName)
+                        }
+                    }
                 }
             }//on tap navigate to next view to see details
             
             
             VStack {
-                NavigationLink(destination: CreateProjectView()) {
+                NavigationLink(destination: CreateProjectView().environmentObject(current)) {
                     MyNavigationButton(text: Text("Proje Oluştur"))
                 }
             }.padding([.leading, .trailing, .bottom])
         }
         .navigationBarTitle("Projelerim")
-        
     }
 }
 
 struct ProjectsView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectsView().environmentObject(TeamClass())
+        ProjectsView().environmentObject(UserClass())
     }
 }

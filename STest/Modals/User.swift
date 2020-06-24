@@ -14,12 +14,14 @@ class UserClass: ObservableObject {
     @Published var user: User
     @Published var cTeams: [Team]
     @Published var mTeams: [Team]
+    @Published var pProjects: [Project]
     
     init() {
         self.isLoggedIn = false
         self.user = User()
         self.cTeams = []
         self.mTeams = []
+        self.pProjects = []
     }
     
     func info() { //: firebase
@@ -40,6 +42,7 @@ class UserClass: ObservableObject {
         //test...
         cTeams = createdTeams
         mTeams = memberTeams
+        pProjects = projects
         //...test
     }
 }
@@ -53,6 +56,7 @@ struct User {
     var image: Image?
     var createdList: [String] //list of created teams' ids
     var memberList: [String] //list of team id's
+    var personalProjects: [String] //list of personal projects' ids
     
     init() {
         name = ""
@@ -60,5 +64,6 @@ struct User {
         image = nil
         createdList = []
         memberList = []
+        personalProjects = []
     }
 }

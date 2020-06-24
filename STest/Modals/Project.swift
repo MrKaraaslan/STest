@@ -8,47 +8,19 @@
 
 import SwiftUI
 
-class ProjectClass: ObservableObject {
-    
-    @Published var isOk: Bool = false
-    @Published var newName: String = "" {
-        didSet {
-            if !self.createdList.isEmpty {
-                for project in self.createdList {
-                    if project.projectName == self.newName {
-                        isOk  = false
-                        break;
-                    }
-                    else {
-                        isOk = true
-                    }
-                }
-            }
-            else {
-                isOk = true
-            }
-        }
-    }
-    
-    var allProjects: [Project] = []
-    @Published var createdList: [Project] = []
-    @Published var memberList: [Project] = []
-    
-    func getTeams() {
-        //:firebase
-        allProjects = projects
-    }
-}
-
-struct Project { //: save project under team folder if there is a team or save it under personal folder created with user id (maybe?)
+struct Project: Identifiable { //: save project under team folder if there is a team or save it under personal folder created with user id (maybe?)
     
     var id = UUID().uuidString
     var projectName: String
     
-    var additionalInfos: [String]
+    var additionalInfos: [String]?
     var trackNumber: Bool
     
-    var steps: [Int:String] //stepNumber : mission
+    var steps: [Int:String]? //stepNumber : mission
 }
 
-let projects:[Project] = []
+let projects:[Project] = [
+    Project(projectName: "Personal sample project", additionalInfos: ["ülke","şehir"], trackNumber: false, steps: [1: "ülkeye git", 2: "şehre git"]),
+    Project(projectName: "kumbara", additionalInfos: nil, trackNumber: true, steps: [1: "kumbarayı al", 2: "parayı teslim et"]),
+    Project(projectName: "2020 kurban", additionalInfos: ["kesilecek ülke"], trackNumber: true, steps: [1: "ödeme al", 2: "kurbanı kestir"])
+]

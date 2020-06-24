@@ -8,57 +8,6 @@
 
 import SwiftUI
 
-class TeamClass: ObservableObject {
-    
-    @Published var isOk: Bool = false
-    @Published var newName: String = "" {
-        didSet {
-            print("check")
-            if !self.createdList.isEmpty {
-                for team in self.createdList {
-                    print("for")
-                    if team.teamName == self.newName {
-                        print("f")
-                        isOk  = false
-                        break;
-                    }
-                    else {
-                        print("t")
-                        isOk = true
-                    }
-                }
-            }
-            else {
-                isOk = true
-            }
-        }
-    }
-    
-    
-    var allTeams: [Team] = []
-    @Published var createdList: [Team] = []
-    @Published var memberList: [Team] = []
-    
-    func getTeams() {
-        //:firebase
-        allTeams = teams
-        seperator()
-    }
-    func seperator() {
-        createdList = []
-        memberList = []
-        for team in allTeams {
-            if team.creator == "self" { //: change it control users name / == userName...
-                createdList.append(team)
-            }
-            else {
-                memberList.append(team)
-            }
-        }
-    }
-}
-
-
 struct Team: Identifiable {
     
     var id = UUID().uuidString

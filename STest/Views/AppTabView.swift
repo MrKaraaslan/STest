@@ -10,8 +10,6 @@ import SwiftUI
 
 struct AppTabView: View {
     
-    var teamList = TeamClass()
-    
     var body: some View {
         TabView {
             
@@ -27,7 +25,7 @@ struct AppTabView: View {
                     Text("test-2")
             }
             
-            ProfileView().environmentObject(teamList)
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("profile")

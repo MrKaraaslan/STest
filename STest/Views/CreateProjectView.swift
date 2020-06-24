@@ -10,11 +10,11 @@ import SwiftUI
 
 struct CreateProjectView: View {
     
-    @EnvironmentObject var teamList: TeamClass
+    @EnvironmentObject var current: UserClass
     
     @State var projectName = ""
     @State var isTeam = false
-    @State var team = ""
+    @State var teamId = ""
     
     @State var additionalList: [AdditionalField] = []
     @State var steps: [Step] = []
@@ -38,12 +38,12 @@ struct CreateProjectView: View {
                         }
                         
                         if isTeam {
-                            if teamList.createdList.isEmpty {
+                            if current.cTeams.isEmpty {
                                 Text("Henüz Takım Oluşturmadınız")
                             }
                             else {
-                                Picker(selection: $team, label: team == "" ? Text("Takım Seçiniz"): nil) {
-                                    ForEach(teamList.createdList) { team in
+                                Picker(selection: $teamId, label: teamId == "" ? Text("Takım Seçiniz"): nil) {
+                                    ForEach(current.cTeams, id: \.id) { team in
                                         HStack {
                                             team.teamImage
                                                 .renderingMode(Image.TemplateRenderingMode.original)
@@ -54,7 +54,7 @@ struct CreateProjectView: View {
                                             Text(team.teamName)
                                                 .frame(maxWidth: .infinity, alignment: .leading)
                                         }
-                                        .tag(team.teamName)
+                                        .tag(team.id)
                                     }
                                 }
                             }
@@ -177,6 +177,6 @@ struct Step: View {
 
 struct CreateProjectView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateProjectView().environmentObject(TeamClass())
+        CreateProjectView().environmentObject(UserClass())
     }
 }
